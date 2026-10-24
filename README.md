@@ -236,7 +236,7 @@ SCREENSHOTS
 ### Home
 
 
-![Home Page](Screenshots/home.png)
+![Home Page](https://github.com/Ramdevexe/DIT1203_PRINCIPLES-OF-WEB-DESIGN-_Assignment-2_DIT2101_905005967_IMRAM-CHERNOR-SESAY/blob/main/home.png)
 
 
 
