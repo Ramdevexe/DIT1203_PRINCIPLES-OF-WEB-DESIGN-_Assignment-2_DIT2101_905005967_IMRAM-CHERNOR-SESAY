@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About us | Explore Salone</title>
+    <style>
+      /* Explore Salone - muted palette (Sierra Leone flag tones, softened) */
+      :root {
+        --green: #3f5b3c;
+        --grey: #9aa09a;
+        --navy: #23344a;
+        --ink: #1f2421;
+        --muted: #5d645f;
+        --bg: #ffffff;
+        --panel: #f3f4f2;
+        --photo: #d6d8d4;
+        --pill: #ebe9ee;
+        --footer: #222423;
+        --line: #dcdedb;
+        --font: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font);
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        flex: 1;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px 40px;
+      }
+      a {
+        color: inherit;
+      }
+
+      /* header */
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 10px 28px;
+        background: var(--panel);
+        border-bottom: 1px solid var(--line);
+        flex-wrap: wrap;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .logo-text {
+        font-size: 1.05rem;
+        line-height: 1.1;
+      }
+      .logo-text span {
+        margin-left: 1.3em;
+      }
+      .site-header nav {
+        display: flex;
+        gap: 26px;
+        margin-left: auto;
+      }
+      .site-header nav a {
+        text-decoration: none;
+        color: var(--muted);
+        padding: 4px 2px;
+        border-bottom: 2px solid transparent;
+      }
+      .site-header nav a:hover {
+        color: var(--ink);
+      }
+      .site-header nav a.current {
+        color: var(--ink);
+        font-weight: 700;
+        border-color: var(--green);
+      }
+      .lang {
+        font: inherit;
+        font-size: 1.15rem;
+        background: none;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 2px 10px;
+        margin-left: 20px;
+        color: var(--ink);
+        cursor: default;
+      }
+
+      /* photos: grey box shows until a real photo is added */
+      .photo {
+        background: var(--photo);
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+      }
+      .photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* search pill */
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--pill);
+        border-radius: 999px;
+        padding: 6px 14px;
+        width: min(100%, 380px);
+      }
+      .search input {
+        flex: 1;
+        border: 0;
+        background: none;
+        font: inherit;
+        font-size: 0.9rem;
+        outline: none;
+        min-width: 0;
+      }
+      .search button {
+        border: 0;
+        background: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .search-menu {
+        color: var(--muted);
+      }
+      .search:focus-within {
+        outline: 2px solid var(--green);
+      }
+      .title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin: 26px 0 18px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.6rem;
+      }
+
+      /* home */
+      .home-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        padding-top: 28px;
+      }
+      .hero-photo {
+        aspect-ratio: 4/3;
+      }
+      .big-title {
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: 1.05;
+        margin: 0 0 20px;
+      }
+      .big-title span {
+        margin-left: 2.2em;
+      }
+      .home-text h2 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0 0 6px;
+      }
+      .home-text p {
+        margin: 0 0 14px;
+        color: var(--ink);
+      }
+      .home-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .home-search {
+        display: flex;
+        justify-content: center;
+        padding: 44px 0 8px;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--green);
+        color: #fff;
+        text-decoration: none;
+        border: 0;
+        border-radius: 6px;
+        padding: 9px 16px;
+        font: inherit;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: #34503a;
+      }
+      .btn.ghost {
+        background: none;
+        color: var(--green);
+        border: 1px solid var(--green);
+      }
+      .btn.ghost:hover {
+        background: var(--panel);
+      }
+
+      /* grids */
+      .grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px 24px;
+      }
+      .card {
+        display: block;
+        text-decoration: none;
+      }
+      .card .photo {
+        aspect-ratio: 1/1;
+      }
+      .card-title {
+        display: block;
+        margin-top: 8px;
+        font-weight: 600;
+      }
+      .card:hover .photo,
+      .card:focus .photo {
+        outline: 3px solid var(--green);
+      }
+
+      /* info pages */
+      .info-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+      .info-photo {
+        aspect-ratio: 4/5;
+      }
+      .info article {
+        font-size: 1.02rem;
+      }
+      .where {
+        color: var(--green);
+        font-weight: 600;
+        margin: 0 0 10px;
+      }
+      .back {
+        color: var(--green);
+      }
+
+      /* activities */
+      .rows {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-decoration: none;
+        padding: 4px;
+        border-radius: 6px;
+      }
+      .row .thumb {
+        width: 90px;
+        height: 70px;
+        flex: none;
+      }
+      .row-title {
+        font-size: 1.15rem;
+      }
+      .row:hover {
+        background: var(--panel);
+      }
+      .row.current-row .row-title {
+        font-weight: 700;
+      }
+      .row.current-row .thumb {
+        outline: 2px solid var(--grey);
+      }
+      .act-layout {
+        display: grid;
+        grid-template-columns: minmax(260px, 1fr) 1.4fr;
+        gap: 40px;
+        align-items: start;
+      }
+      .act-detail h2 {
+        margin: 0 0 6px;
+        font-weight: 500;
+        font-size: 1.3rem;
+      }
+
+      /* about + reviews */
+      .about-layout {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+      .about-text h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0 0 6px;
+      }
+      .about-text p {
+        margin: 0 0 26px;
+      }
+      .reviews {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 16px;
+        background: #fff;
+      }
+      .reviews h2 {
+        font-size: 1.05rem;
+        margin: 0 0 10px;
+      }
+      .reviews label {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+      .reviews input,
+      .reviews textarea,
+      .reviews select {
+        display: block;
+        width: 100%;
+        margin-top: 3px;
+        font: inherit;
+        color: var(--ink);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 6px 8px;
+      }
+      .review {
+        border-top: 1px solid var(--line);
+        padding: 10px 0;
+      }
+      .review .stars {
+        color: var(--green);
+        letter-spacing: 2px;
+      }
+      .review h3 {
+        margin: 2px 0;
+        font-size: 1rem;
+      }
+      .review p {
+        margin: 0 0 6px;
+      }
+      .review .who {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .small {
+        font-size: 0.8rem;
+      }
+
+      /* search results */
+      .results {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .results a {
+        text-decoration: none;
+        display: block;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px 16px;
+      }
+      .results a:hover {
+        background: var(--panel);
+      }
+      .results .type {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--green);
+        font-weight: 700;
+      }
+      .results strong {
+        display: block;
+        font-size: 1.1rem;
+      }
+
+      /* footer */
+
+      .site-footer {
+        background: var(--footer);
+        color: #fff;
+        margin-top: auto;
+        padding: 42px 28px 0;
+        text-align: left;
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
+        gap: 34px;
+        padding-bottom: 32px;
+      }
+      .footer-brand,
+      .footer-links,
+      .footer-note {
+        min-width: 0;
+      }
+      .footer-logo {
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.35rem;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+        margin-bottom: 10px;
+      }
+      .footer-brand p,
+      .footer-note p {
+        color: #d2d6d2;
+        font-size: 0.92rem;
+        max-width: 290px;
+        margin: 8px 0 0;
+      }
+      .footer-links h3,
+      .footer-note h3 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #c9d4c5;
+        margin: 0 0 13px;
+      }
+      .footer-links a {
+        display: block;
+        color: #f0f1ef;
+        text-decoration: none;
+        margin: 8px 0;
+        font-size: 0.94rem;
+      }
+      .footer-links a:hover,
+      .footer-note a:hover {
+        color: #b9d3b1;
+        text-decoration: underline;
+      }
+      .footer-note a {
+        color: #fff;
+        text-underline-offset: 3px;
+      }
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        border-top: 1px solid #4a4d4a;
+        padding: 14px 0 18px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        color: #c7cbc7;
+        font-size: 0.82rem;
+      }
+      @media (max-width: 760px) {
+        .footer-inner {
+          grid-template-columns: 1fr 1fr;
+          gap: 26px;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+      @media (max-width: 480px) {
+        .site-footer {
+          padding: 32px 20px 0;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+      }
+
+      /* focus + small screens */
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--green);
+        outline-offset: 2px;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .home-hero,
+        .info-layout,
+        .act-layout,
+        .about-layout {
+          grid-template-columns: 1fr;
+        }
+        .big-title {
+          font-size: 2.4rem;
+        }
+        .site-header nav {
+          gap: 16px;
+          order: 3;
+          width: 100%;
+          margin: 0;
+          justify-content: center;
+        }
+        .lang {
+          margin-left: auto;
+        }
+      }
+      @media (max-width: 480px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 18px 12px;
+        }
+      }
+
+      .search {
+        position: relative;
+      }
+      .search-results {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        right: 0;
+        z-index: 20;
+        list-style: none;
+        margin: 0;
+        padding: 6px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        max-height: 320px;
+        overflow: auto;
+        text-align: left;
+      }
+      .search-results[hidden] {
+        display: none;
+      }
+      .search-results a {
+        display: block;
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 6px;
+      }
+      .search-results a:hover {
+        background: var(--panel);
+      }
+      .search-results .type {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--green);
+        font-weight: 700;
+        display: block;
+      }
+      .search-results .none {
+        padding: 8px 10px;
+        color: var(--muted);
+      }
+      .logo-mark {
+        display: block;
+      }
+
+      .photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .photo.hero-photo img {
+        min-height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="Explore Salone home">
+        <svg
+          class="logo-mark"
+          viewBox="0 0 56 42"
+          width="56"
+          height="42"
+          aria-hidden="true"
+        >
+          <rect width="56" height="14" fill="#3f5b3c" />
+          <rect y="14" width="56" height="14" fill="#9aa09a" />
+          <rect y="28" width="56" height="14" fill="#23344a" />
+        </svg>
+        <span class="logo-text">Explore<br /><span>Salone</span></span>
+      </a>
+      <nav aria-label="Main">
+        <a href="index.html">Home</a><a href="locations.html">Locations</a
+        ><a href="dinning.html">Dining</a
+        ><a href="activities.html">Activities</a>
+      </nav>
+      <button
+        class="lang"
+        type="button"
+        title="Language: English"
+        aria-label="Language: English"
+      >
+        EN
+      </button>
+    </header>
+    <main>
+      <section class="about">
+        <div class="title-row">
+          <span></span>
+          <form class="search" role="search">
+            <span class="search-menu" aria-hidden="true">&#9776;</span>
+            <input
+              type="search"
+              name="q"
+              placeholder="Search locations, dining, activities"
+              aria-label="Search the site"
+            />
+            <button type="submit" aria-label="Search">&#128269;</button>
+          </form>
+        </div>
+        <div class="about-layout">
+          <div class="about-text">
+            <h2>Our Mission</h2>
+            <p>
+              Explore Salone was built to replace confusing travel forums with
+              simple, actionable truth. We bridge the information gap for
+              first-time international visitors by designing interactive tools
+              that solve real on-the-ground problems—from calculating physical
+              cash needs to verifying regional destination logistics. Our goal
+              is to transform travel uncertainty into absolute confidence,
+              letting you focus entirely on the warmth and wonder of Salone.
+            </p>
+            <h2>User-Driven Design (The Feedback Loop Element)</h2>
+            <p>
+              Technology updates quickly, and so does local infrastructure.
+              Explore Salone operates on a continuous user feedback loop. We
+              actively listen to and integrate crowd-sourced data, reviews, and
+              travel updates shared directly by tourists and local guides on the
+              ground. This ensures our facts remain accurate, our tools stay
+              optimized, and our application grows alongside Sierra Leone&#x27;s
+              vibrant tourism landscape.
+            </p>
+          </div>
+          <aside class="reviews" aria-label="Traveller reviews">
+            <h2>Leave a review</h2>
+            <form id="review-form">
+              <label
+                >Rating
+                <select id="rating">
+                  <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+                  <option value="4">&#9733;&#9733;&#9733;&#9733;&#9734;</option>
+                  <option value="3">&#9733;&#9733;&#9733;&#9734;&#9734;</option>
+                  <option value="2">&#9733;&#9733;&#9734;&#9734;&#9734;</option>
+                  <option value="1">&#9733;&#9734;&#9734;&#9734;&#9734;</option>
+                </select></label
+              >
+              <label
+                >Review title <input id="r-title" required maxlength="60"
+              /></label>
+              <label
+                >Review
+                <textarea
+                  id="r-body"
+                  required
+                  maxlength="400"
+                  rows="3"
+                ></textarea>
+              </label>
+              <label
+                >Your name <input id="r-name" required maxlength="40"
+              /></label>
+              <button class="btn" type="submit">Submit review</button>
+            </form>
+            <h2>Traveller reviews</h2>
+            <div id="review-list">
+              <p class="muted">
+                No reviews yet. Be the first to share an update.
+              </p>
+            </div>
+            <p class="muted small">Reviews are saved in this browser only.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="footer-logo" href="index.html">Explore Salone</a>
+          <p>
+            Discover Sierra Leone's beaches, heritage, wildlife and local food.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3>Explore</h3>
+          <a href="index.html">Home</a>
+          <a href="locations.html">Locations</a>
+          <a href="activities.html">Activities</a>
+          <a href="dinning.html">Dining</a>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <a href="about.html">About Explore Salone</a>
+          <a href="about.html#mission">Our mission</a>
+        </div>
+        <div class="footer-note">
+          <h3>Image credits</h3>
+          <p>
+            Photographs and illustrations are linked to their source pages.
+            Reuse terms vary; see <a href="CREDITS.txt">CREDITS.txt</a>.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© Explore Salone</span
+        ><span>Made to help you explore Sierra Leone.</span>
+      </div>
+    </footer>
+    <script>
+      const SITE_INDEX = [
+        {
+          title: "River Number Two Beach",
+          type: "Location",
+          url: "locations_info.html?id=river-number-two-beach",
+          text: "Western Area Peninsula. Located on the Western Area Peninsula, River Number Two Beach is globally celebrated for its blindingly white sand contrasting against lush, emerald rainforest mountains. This unique location features a fresh mountain water river meeting the Atlantic Ocean estuary, allowing visitors to swim in both fresh and saltwater channels. Run entirely by a local community association, it offers clean beach facility rentals, local seafood grills, and boat excursions to nearby island reefs.",
+        },
+        {
+          title: "Tacugama Chimpanzee Sanctuary",
+          type: "Location",
+          url: "locations_info.html?id=tacugama-chimpanzee-sanctuary",
+          text: "Western Area Peninsula National Park, near Freetown. Tacugama Chimpanzee Sanctuary sits in forested hills above Freetown, inside the Western Area Peninsula National Park. Founded in the mid-1990s, it gives a home to chimpanzees rescued from the pet trade and the bushmeat trade. Visitors can book a guided tour, watch the chimpanzees from viewing points and learn about conservation work in Sierra Leone. Booking ahead is recommended.",
+        },
+        {
+          title: "Tiwai Island Wildlife Sanctuary",
+          type: "Location",
+          url: "locations_info.html?id=tiwai-island",
+          text: "Moa River, southern Sierra Leone. Tiwai Island is a community-managed wildlife sanctuary on the Moa River in southern Sierra Leone. The island is covered in rainforest and is known for its primates, including several monkey species and chimpanzees, as well as pygmy hippos and a rich variety of birds. Visitors reach the island by canoe and explore it on guided walks and boat trips, and can stay at the simple eco-lodge.",
+        },
+        {
+          title: "Bunce Island",
+          type: "Location",
+          url: "locations_info.html?id=bunce-island",
+          text: "Sierra Leone River estuary. Bunce Island is a historic site in the Sierra Leone River, about 30 km from Freetown. Its ruined fort was used for centuries by European traders, and later the British, in the transatlantic slave trade. Today the ruins include the remains of the fort walls, a factory house and a cemetery. Visits are made by boat and are a moving way to learn about the history that links Sierra Leone with the wider Atlantic world.",
+        },
+        {
+          title: "Tokeh Beach",
+          type: "Location",
+          url: "locations_info.html?id=tokeh-beach",
+          text: "Western Area Peninsula. Tokeh Beach is a long, curving stretch of golden sand on the Freetown Peninsula, backed by green hills. It is a popular spot for swimming, relaxing, and watching local fishermen bring in their boats. Beachfront guesthouses and restaurants sit along the shore, making it an easy place to spend a full day or a weekend.",
+        },
+        {
+          title: "Lumley Beach",
+          type: "Location",
+          url: "locations_info.html?id=lumley-beach",
+          text: "Freetown. Lumley Beach is Freetown's best-known city beach, running along the western edge of the capital. It is lively in the evenings and at weekends, with bars, restaurants, music and people playing football on the sand. It is the easiest beach to reach from central Freetown and a good first stop for visitors.",
+        },
+        {
+          title: "Bureh Beach",
+          type: "Location",
+          url: "locations_info.html?id=bureh-beach",
+          text: "Western Area Peninsula. Bureh Beach is a relaxed fishing-village beach on the Freetown Peninsula and is known as the main spot for surfing in Sierra Leone. Waves are suitable for beginners as well as more experienced surfers, and local surf instructors offer lessons and board hire. Rooms and simple restaurants are available nearby.",
+        },
+        {
+          title: "Outamba-Kilimi National Park",
+          type: "Location",
+          url: "locations_info.html?id=outamba-kilimi-national-park",
+          text: "North-west Sierra Leone. Outamba-Kilimi National Park lies in the north-west of Sierra Leone, close to the border with Guinea. Its savannah, woodland and river landscapes are home to chimpanzees, hippos, forest elephants, monkeys and many bird species. It is a quieter, more remote destination, best for travellers who want guided walks and wildlife viewing away from the coast.",
+        },
+        {
+          title: "River NO.2 Beachfront",
+          type: "Dining",
+          url: "dinning_info.html?id=river-number-two-beachfront",
+          text: "River Number Two Beach. Authentic Oceanfront Grills: The dining experience across Sierra Leone's peninsula beaches is beautifully raw and interactive. At River Number Two and Tokeh Beach, you can choose your fish or lobster directly from the local fishermen as they pull their wooden boats onto the white sand. The food is marinated in local peppers and lime, then slow-grilled over wood embers. For a more energetic urban vibe, the Lumley Beach strip offers modern seating, music, and an endless row of grilled cassava fish, jollof rice, and local ginger drinks right next to the sea walls.",
+        },
+        {
+          title: "Tokeh Beach Seafood",
+          type: "Dining",
+          url: "dinning_info.html?id=tokeh-beach-dining",
+          text: "Tokeh Beach. Beachfront restaurants and guesthouse kitchens along Tokeh Beach serve freshly caught fish, prawns and lobster, usually grilled and served with rice, fried plantain or cassava. Many places cook to order, so allow time for your meal and enjoy the view of the sea while you wait.",
+        },
+        {
+          title: "Lumley Beach Strip",
+          type: "Dining",
+          url: "dinning_info.html?id=lumley-beach-strip",
+          text: "Lumley Beach, Freetown. Lumley Beach has the liveliest dining scene in Freetown, with seaside restaurants and bars offering grilled fish, jollof rice, and international dishes, often with music in the evenings. It is easy to reach from the city centre and popular with both residents and visitors.",
+        },
+        {
+          title: "Bureh Beach Kitchens",
+          type: "Dining",
+          url: "dinning_info.html?id=bureh-beach-kitchens",
+          text: "Bureh Beach. Simple, friendly eateries in the fishing village of Bureh Beach serve the day's catch with rice and local sauces. It is a good place for a relaxed lunch after a surf lesson.",
+        },
+        {
+          title: "Local Sierra Leonean Dishes",
+          type: "Dining",
+          url: "dinning_info.html?id=local-sierra-leonean-dishes",
+          text: "Across Freetown. Look out for classic Sierra Leonean dishes such as cassava leaf stew, groundnut (peanut) stew, jollof rice, and fried plantain, usually served with rice. Local eateries often serve one or two dishes of the day, so ask what is freshly cooked.",
+        },
+        {
+          title: "Fresh Grilled Fish",
+          type: "Dining",
+          url: "dinning_info.html?id=fresh-grilled-fish",
+          text: "Peninsula beaches. Grilled fish, such as barracuda or snapper, is a staple at the beach. It is usually seasoned with pepper, onions and lime, and served with rice, cassava or plantain. Choose a busy spot where the fish is cooked fresh in front of you.",
+        },
+        {
+          title: "Street Food and Snacks",
+          type: "Dining",
+          url: "dinning_info.html?id=street-food-and-snacks",
+          text: "Freetown. Freetown's street vendors sell snacks like fried plantain, fried cassava, grilled corn, roasted groundnuts and fresh fruit. Choose stalls with a steady crowd and food cooked hot in front of you.",
+        },
+        {
+          title: "Local Drinks",
+          type: "Dining",
+          url: "dinning_info.html?id=local-drinks",
+          text: "Across Sierra Leone. Popular local drinks include ginger drinks, fresh fruit juices, and Star, the well-known Sierra Leonean beer. Bottled water is widely available and is the safest choice for visitors.",
+        },
+        {
+          title: "Independence Day",
+          type: "Activity",
+          url: "activities_info.html?id=independence-day",
+          text: "27 April. Celebrated annually on April 27th across the entire nation. Experience vibrant street carnivals, traditional cultural dances, lantern parades, and nationwide musical concerts celebrating freedom and unity. The day marks Sierra Leone's independence from the United Kingdom in 1961.",
+        },
+        {
+          title: "The Armed Forces Day",
+          type: "Activity",
+          url: "activities_info.html?id=armed-forces-day",
+          text: "18 February. Armed Forces Day is a national public holiday observed each year on February 18th. It honours the Republic of Sierra Leone Armed Forces and their service to the country, and is marked with ceremonies and tributes across the nation.",
+        },
+        {
+          title: "Christmas",
+          type: "Activity",
+          url: "activities_info.html?id=christmas",
+          text: "25 December. Christmas Day is a national public holiday on December 25th, followed by Boxing Day on December 26th. Across Sierra Leone, families gather, churches hold special services, and streets and homes are decorated. It is a festive time of year to be in the country.",
+        },
+        {
+          title: "About us",
+          type: "Page",
+          url: "about.html",
+          text: "Explore Salone was built to replace confusing travel forums with simple, actionable truth. We bridge the information gap for first-time international visitors by designing interactive tools that solve real on-the-ground problems—from calculating physical cash needs to verifying regional destination logistics. Our goal is to transform travel uncertainty into absolute confidence, letting you focus entirely on the warmth and wonder of Salone. Technology updates quickly, and so does local infrastructure. Explore Salone operates on a continuous user feedback loop. We actively listen to and integrate crowd-sourced data, reviews, and travel updates shared directly by tourists and local guides on the ground. This ensures our facts remain accurate, our tools stay optimized, and our application grows alongside Sierra Leone's vibrant tourism landscape.",
+        },
+      ];
+      // Search: type a word, press Enter, pick a result.
+      document.querySelectorAll(".search").forEach(function (form) {
+        const input = form.querySelector("input");
+        const box = document.createElement("ul");
+        box.className = "search-results";
+        box.hidden = true;
+        form.appendChild(box);
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+          box.innerHTML = "";
+          box.hidden = false;
+          const found = [];
+          SITE_INDEX.forEach(function (item) {
+            let score = 0;
+            for (const w of words) {
+              if (item.title.toLowerCase().includes(w)) score += 3;
+              else if (item.text.toLowerCase().includes(w)) score += 1;
+              else return;
+            }
+            if (words.length) found.push({ item: item, score: score });
+          });
+          found.sort(function (a, b) {
+            return b.score - a.score;
+          });
+          if (!found.length) {
+            const li = document.createElement("li");
+            li.className = "none";
+            li.textContent = "No matches. Try beach, fish or holiday.";
+            box.appendChild(li);
+            return;
+          }
+          found.slice(0, 8).forEach(function (f) {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = f.item.url;
+            const type = document.createElement("span");
+            type.className = "type";
+            type.textContent = f.item.type;
+            a.append(type, document.createTextNode(f.item.title));
+            li.appendChild(a);
+            box.appendChild(li);
+          });
+        });
+        document.addEventListener("click", function (event) {
+          if (!form.contains(event.target)) box.hidden = true;
+        });
+      });
+
+      // Feedback loop: visitors leave a review; it is saved in this browser.
+      const KEY = "exploreSaloneReviews";
+      const form = document.getElementById("review-form");
+      const box = document.getElementById("review-list");
+
+      function load() {
+        try {
+          return JSON.parse(localStorage.getItem(KEY)) || [];
+        } catch (err) {
+          return [];
+        }
+      }
+      function save(list) {
+        try {
+          localStorage.setItem(KEY, JSON.stringify(list));
+        } catch (err) {
+          /* storage may be blocked */
+        }
+      }
+      function render(list) {
+        if (!list.length) return;
+        box.innerHTML = "";
+        list.forEach(function (r) {
+          const div = document.createElement("div");
+          div.className = "review";
+          const stars = document.createElement("div");
+          stars.className = "stars";
+          stars.textContent = "★".repeat(r.rating) + "☆".repeat(5 - r.rating);
+          const h = document.createElement("h3");
+          h.textContent = r.title;
+          const p = document.createElement("p");
+          p.textContent = r.body;
+          const who = document.createElement("div");
+          who.className = "who";
+          who.textContent = r.name + " · " + r.date;
+          div.append(stars, h, p, who);
+          box.appendChild(div);
+        });
+      }
+
+      let reviews = load();
+      render(reviews);
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        reviews.unshift({
+          rating: Number(document.getElementById("rating").value),
+          title: document.getElementById("r-title").value.trim(),
+          body: document.getElementById("r-body").value.trim(),
+          name: document.getElementById("r-name").value.trim(),
+          date: new Date().toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          }),
+        });
+        save(reviews);
+        render(reviews);
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+EXPLORE SALONE — IMAGE SOURCES AND REUSE NOTES
+================================================
+
+Images are loaded from Wikimedia Commons' Special:FilePath service, so the browser fetches them online. Please keep this file with the project.
+
+1. River Number Two / homepage / River Number Two dining
+   File: The Number 2 , Sierra Leone.jpg
+   Author: Hussein Kefel
+   License: CC BY-SA 3.0
+   Source: https://commons.wikimedia.org/wiki/File:The_Number_2_,_Sierra_Leone.jpg
+   License: https://creativecommons.org/licenses/by-sa/3.0/
+   Required: credit the author, link the license, and indicate changes if you modify the image. Share adaptations under the same or compatible license.
+
+2. Lumley Beach
+   File: Lumley Beach Freetown.JPG
+   Author: Hussein Kefel
+   License: CC BY-SA 3.0
+   Source: https://commons.wikimedia.org/wiki/File:Lumley_Beach_Freetown.JPG
+   License: https://creativecommons.org/licenses/by-sa/3.0/
+
+3. Tokeh Beach
+   File: Tokeh Beach.jpg
+   Source: https://commons.wikimedia.org/wiki/File:Tokeh_Beach.jpg
+   Check the file page for the exact author and license before reusing or redistributing.
+
+4. Tacugama Chimpanzee Sanctuary
+   File: Chimpas at Tacugama Sanctuary, near Freetown.jpg
+   Author: Jeremy Weate
+   License: CC BY 2.0
+   Source: https://commons.wikimedia.org/wiki/File:Chimpas_at_Tacugama_Sanctuary,_near_Freetown.jpg
+   License: https://creativecommons.org/licenses/by/2.0/
+
+5. Tiwai Island
+   File: Tiwa Island - flickr.jpg
+   Author: Dorothy Voorhees
+   License: CC BY-SA 2.0
+   Source: https://commons.wikimedia.org/wiki/File:Tiwa_Island_-_flickr.jpg
+   License: https://creativecommons.org/licenses/by-sa/2.0/
+
+6. Bunce Island
+   File: Bunce Island Fortress Wall 01.jpg
+   Source: https://commons.wikimedia.org/wiki/Category:Bunce_Island
+   Check the selected file page for its exact author and license before reusing or redistributing.
+
+7. Outamba-Kilimi National Park
+   File: Outamba Kilimi Hippos Sierra Leone.jpg
+   Author: Leasmhar
+   License: CC BY-SA 3.0 (as shown on the Commons file page)
+   Source: https://commons.wikimedia.org/wiki/File:Outamba_Kilimi_Hippos_Sierra_Leone.jpg
+
+8. Sierra Leone cuisine
+   File: Rice and Potato Leaves.jpg
+   Author: Salone titi
+   License: CC BY-SA 4.0
+   Source: https://commons.wikimedia.org/wiki/File:Rice_and_Potato_Leaves.jpg
+   License: https://creativecommons.org/licenses/by-sa/4.0/
+
+9. Ebeh
+   File: Ebeh.jpg
+   Author: Salone titi
+   License: CC BY-SA 4.0
+   Source: https://commons.wikimedia.org/wiki/File:Ebeh.jpg
+   License: https://creativecommons.org/licenses/by-sa/4.0/
+
+10. Fish and meat for the Awojoh
+    Source: https://commons.wikimedia.org/wiki/Category:Cuisine_of_Sierra_Leone
+    Check the selected file page for its exact author and license before reuse.
+
+11. Rice, akara, plantains and beans
+    Source: https://commons.wikimedia.org/wiki/Category:Cuisine_of_Sierra_Leone
+    Check the selected file page for its exact author and license before reuse.
+
+12. Local drinks illustration
+    File: Milk in a bag.jpg
+    Source: https://commons.wikimedia.org/wiki/Category:Cuisine_of_Sierra_Leone
+    This is a local milk packaging photograph, not a ginger-drink photograph. It is used only as a general local-drinks category image.
+
+13. Independence Day
+    File: Flag of Sierra Leone.svg
+    Source: https://commons.wikimedia.org/wiki/File:Flag_of_Sierra_Leone.svg
+    Check the file page for the precise status and terms before redistribution.
+
+14. Armed Forces Day
+    File: A-Sierra-Leone-regiment-falling-in-for-parade-1939-142355129755.jpg
+    This is a historical Sierra Leone regiment parade image, not a photograph of a modern Armed Forces Day event.
+    Source: https://commons.wikimedia.org/wiki/Category:Sierra_Leone_Colony_and_Protectorate
+    Check the file page for the precise license before redistribution.
+
+15. Christmas
+    File: Christmas.jpg
+    Author: Uche2023
+    License: CC BY-SA 4.0
+    Source: https://commons.wikimedia.org/wiki/File:Christmas.jpg
+    License: https://creativecommons.org/licenses/by-sa/4.0/
+
+IMPORTANT
+- A public webpage is not automatically free to reuse. Check each linked file page for its exact license before publishing.
+- For CC BY images, provide attribution and a license link.
+- For CC BY-SA images, adaptations may need to be shared under the same or a compatible license.
+- The Bureh Beach card uses a Sierra Leone peninsula beach photograph as an explicitly marked illustration because an exact Bureh Beach image with verified reuse terms was not identified in the Commons search. Replace it with a verified, licensed Bureh Beach photo if you find one.
