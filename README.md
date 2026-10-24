@@ -231,5 +231,38 @@ Explore Salone also provides a foundation for future improvements, such as expan
 *This project was developed by Imram Chernor Sesay as part of his Diploma in Information Technology at Limkokwing University of Creative Technology.*
 
 SCREENSHOTS
+## Screenshots
 
+### Home
+
+
+![Home Page](Screenshots/home.png)
+
+
+
+### Locations
+
+
+![About Page](Screenshots/location.png)
+
+
+
+### Dinning 
+
+
+![Services Page](Screenshots/dinning.png)
+
+
+
+### Activities
+
+
+![Explore Page](Screenshots/activities.png)
+
+
+
+### About
+
+
+![Contact Page](Screenshots/about.png)
 
